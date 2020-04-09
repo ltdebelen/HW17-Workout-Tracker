@@ -14,9 +14,11 @@ app.use(logger("dev"));
 require("./routes/html-routes")(app);
 require("./routes/api-routes")(app);
 
+mongoose.Promise = global.Promise;
+
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb://user:p@$$w0rd@ds335668.mlab.com:35668/heroku_9p5vfzzz",
+    "mongodb://user:password1@ds335668.mlab.com:35668/heroku_9p5vfzzz",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
